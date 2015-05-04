@@ -3,7 +3,7 @@ function varargout = DataCollectionGUI(varargin)
 %
 %   http://www.mathworks.com/help/matlab/creating_guis/add-code-for-components-in-callbacks.html
 %
-% Last Modified by GUIDE v2.5 29-Apr-2015 11:40:06
+% Last Modified by GUIDE v2.5 04-May-2015 16:52:18
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -37,10 +37,12 @@ function DataCollectionGUI_OpeningFcn(hObject, ~, handles, varargin)
 handles.output = hObject;
 
 out = instrhwinfo('serial');
+TempString = '';
 if ~isempty(out.AvailableSerialPorts);
     for i = length(out.AvailableSerialPorts)
-        set(handles.CommPorts, 'String', out.AvailableSerialPorts{i});
+        TempString = strcat(TempString, sprintf('\n'), out.AvailableSerialPorts{i});
     end
+    set(handles.CommPorts, 'String', TempString);
 end
 
 % Update handles structure
@@ -51,7 +53,7 @@ guidata(hObject, handles);
 
 
 % --- Outputs from this function are returned to the command line.
-function varargout = DataCollectionGUI_OutputFcn(hObject, eventdata, handles) 
+function varargout = DataCollectionGUI_OutputFcn(hObject, ~, handles) 
 % varargout  cell array for returning output args (see VARARGOUT);
 % hObject    handle to figure
 % eventdata  reserved - to be defined in a future version of MATLAB
@@ -62,17 +64,45 @@ varargout{1} = handles.output;
 
 
 % --- Executes on button press in GetData.
-function GetData_Callback(hObject, eventdata, handles)
+function GetData_Callback(hObject, ~, handles)
 % hObject    handle to GetData (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
+handles.stop = 0;
+% Update handles structure
+guidata(hObject, handles);
+
+if isfield(handles, 'Port');
+    dataPoints=0; time=0; k=1;
+    while(k < 1000) && ~handles.stop
+        line = fscanf(handles.Port);
+        % use numbers(2), numbers(3) ... for more graphs    
+        numbers = str2double(line);
+        dataPoints(k) = numbers(1);
+        time(k) = k;
+        
+        plot(time,dataPoints);
+        axis([0 1000 -2 2]);
+
+        drawnow;
+        k=k+1;
+        
+        handles = guidata(hObject);
+    end
+end
+
 
 % --- Executes on button press in StopDataCollection.
-function StopDataCollection_Callback(hObject, eventdata, handles)
+function StopDataCollection_Callback(hObject, ~, handles)
 % hObject    handle to StopDataCollection (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+handles.stop = 1;
+
+% Update handles structure
+guidata(hObject, handles);
+
 
 
 % --- Executes on button press in SaveData.
@@ -83,7 +113,7 @@ function SaveData_Callback(hObject, eventdata, handles)
 
 
 % --- Executes on selection change in CommPorts.
-function CommPorts_Callback(hObject, eventdata, handles)
+function CommPorts_Callback(hObject, ~, handles)
 % hObject    handle to CommPorts (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
@@ -93,7 +123,7 @@ function CommPorts_Callback(hObject, eventdata, handles)
 
 
 % --- Executes during object creation, after setting all properties.
-function CommPorts_CreateFcn(hObject, eventdata, handles)
+function CommPorts_CreateFcn(hObject, ~, handles)
 % hObject    handle to CommPorts (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
@@ -117,12 +147,13 @@ CurrentValue = contents{get(handles.CommPorts,'Value')};
 
 if ~strcmp(CurrentValue, 'No Connections Available')
     % create the serial port
-    Port = serial(CurrentValue, 'Timeout', 1, 'Baudrate', 9600);
+    Port = serial(CurrentValue, 'Timeout', 1, 'Baudrate', 11520);
     try
         % opent the port and save it in the 
         fopen(Port);
         handles.Port = Port;
         % turn the connect button off
+        set(handles.CommPortFeedback, 'String', get(Port, 'Name'));
         set(handles.ConnectToPort, 'Enable', 'Off');
     catch e
         disp(e.message);
@@ -138,10 +169,53 @@ function ClearCommPort_Callback(hObject, ~, handles)
 % hObject    handle to ClearCommPort (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+if isfield(handles, 'Port');
+    fclose(handles.Port);
+    handles = rmfield(handles, 'Port');
+    set(handles.CommPortFeedback, 'String', 'No Port Selected');
+    set(handles.ConnectToPort, 'Enable', 'on');
+end
+
+if ~isempty(instrfind)
+    fclose(instrfind);
+    delete(instrfind);
+end
+
+% update gui data
+guidata(hObject, handles);
+
+out = instrhwinfo('serial');
+TempString = '';
+if ~isempty(out.AvailableSerialPorts);
+    for i = length(out.AvailableSerialPorts)
+        TempString = strcat(TempString, sprintf('\n'), out.AvailableSerialPorts{i});
+    end
+    set(handles.CommPorts, 'String', TempString);
+else
+    set(handles.CommPorts, 'String', 'No Connections Available');
+end
+
+% update gui data
+guidata(hObject, handles);
 
 
-% --- Executes on button press in Refresh.
-function Refresh_Callback(hObject, ~, handles)
-% hObject    handle to Refresh (see GCBO)
+% --- Executes when user attempts to close figure1.
+function figure1_CloseRequestFcn(hObject, ~, handles)
+% hObject    handle to figure1 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+
+if isfield(handles, 'Port');
+    fclose(handles.Port);
+    handles = rmfield(handles, 'Port');
+    set(handles.CommPortFeedback, 'String', 'No Port Selected');
+    set(handles.ConnectToPort, 'Enable', 'on');
+end
+
+if ~isempty(instrfind)
+    fclose(instrfind);
+    delete(instrfind);
+end
+
+% Hint: delete(hObject) closes the figure
+delete(hObject);
