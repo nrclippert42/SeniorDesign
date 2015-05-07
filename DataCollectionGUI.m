@@ -3,7 +3,7 @@ function varargout = DataCollectionGUI(varargin)
 %
 %   http://www.mathworks.com/help/matlab/creating_guis/add-code-for-components-in-callbacks.html
 %
-% Last Modified by GUIDE v2.5 04-May-2015 16:52:18
+% Last Modified by GUIDE v2.5 05-May-2015 18:20:30
 %
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -68,29 +68,138 @@ function GetData_Callback(hObject, ~, handles)
 % hObject    handle to GetData (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-
-handles.stop = 0;
-% Update handles structure
-guidata(hObject, handles);
-
 if isfield(handles, 'Port');
-    dataPoints=0; time=0; k=1;
-    while(k < 1000) && ~handles.stop
-        line = fscanf(handles.Port);
-        % use numbers(2), numbers(3) ... for more graphs    
-        numbers = str2double(line);
-        dataPoints(k) = numbers(1);
-        time(k) = k;
-        
-        plot(time,dataPoints);
-        axis([0 1000 -2 2]);
+    
+    handles.stop = 0;
+    % Update handles structure
+    guidata(hObject, handles);
 
-        drawnow;
-        k=k+1;
-        
-        handles = guidata(hObject);
+    % get the current value of the number of inputs pop up menu
+    contents = cellstr(get(handles.NumberOfInputs,'String'));
+    CurrentValue = contents{get(handles.NumberOfInputs,'Value')};
+
+    switch str2double(CurrentValue)
+        case 1
+            dataPoints=0; time=0; k=1; Ymax = 0;
+            while(k < 1000) && ~handles.stop
+                line = fscanf(handles.Port);
+                % use numbers(2), numbers(3) ... for more graphs    
+                numbers = str2num(line);
+                % check the length of numbers to avoid erros
+                if numel(numbers) == 0
+                    set(handles.InputFeedback, 'String', 'Hit the button agian');
+                    break;
+                elseif numel(numbers) == 1
+                    set(handles.InputFeedback, 'String', 'G2G');
+                    dataPoints(k) = numbers(1);
+                    time(k) = k;
+                    
+                    % determine max height
+                    if dataPoints(k) > Ymax
+                        Ymax = dataPoints(k) + 5;
+                    end
+
+                    plot(time,dataPoints)
+                    axis([0 (k+10) -Ymax Ymax])
+
+                    drawnow;
+                    k=k+1;
+
+                    handles = guidata(hObject);
+                elseif numel(numbers) == 2
+                    set(handles.InputFeedback, 'String', 'Two inputs detected');
+                    break;
+                else
+                    break;
+                end
+            end
+
+        case 2
+            dataPoints1=0; dataPoints2=0; time=0; k=1; Ymax = 0;
+            while(k < 1000) && ~handles.stop
+                line = fscanf(handles.Port);
+                % use numbers(2), numbers(3) ... for more graphs    
+                numbers = str2num(line);
+                % check the length of numbers to avoid erros
+                if numel(numbers) == 0
+                    set(handles.InputFeedback, 'String', 'Hit the button agian');
+                    break;
+                elseif numel(numbers) == 2
+                    set(handles.InputFeedback, 'String', 'G2G');
+                    dataPoints1(k) = numbers(1);
+                    dataPoints2(k) = numbers(2);
+                    time(k) = k;
+
+                    % determine max height
+                    if dataPoints1(k) > Ymax
+                        Ymax = dataPoints1(k) + 5;
+                    end
+                    
+                    if dataPoints2(k) > Ymax
+                        Ymax = dataPoints2(k) + 5;
+                    end
+                    
+                    plot(time,dataPoints1,'b',time,dataPoints2,'g')
+                    axis([0 (k+10) -Ymax Ymax])
+
+                    drawnow;
+                    k=k+1;
+
+                    handles = guidata(hObject);
+                else
+                    break;
+                end
+            end
+
+        case 3
+            dataPoints1=0; dataPoints2=0; dataPoints3=0; time=0; k=1; Ymax = 0;
+            while(k < 1000) && ~handles.stop
+                line = fscanf(handles.Port);
+                % use numbers(2), numbers(3) ... for more graphs    
+                numbers = str2num(line);
+                % check the length of numbers to avoid erros
+                if numel(numbers) == 0
+                    set(handles.InputFeedback, 'String', 'Hit the button agian');
+                    break;
+                elseif numel(numbers) == 2
+                    set(handles.InputFeedback, 'String', 'Two inputs detected');
+                    break;
+                elseif numel(numbers) == 3
+                    set(handles.InputFeedback, 'String', 'G2G');
+                    dataPoints1(k) = numbers(1);
+                    dataPoints2(k) = numbers(2);
+                    dataPoints3(k) = numbers(3);
+                    time(k) = k;
+
+                    % determine max height
+                    if dataPoints1(k) > Ymax
+                        Ymax = dataPoints1(k) + 5;
+                    end
+                    
+                    if dataPoints2(k) > Ymax
+                        Ymax = dataPoints2(k) + 5;
+                    end
+                    
+                    if dataPoints3(k) > Ymax
+                        Ymax = dataPoints3(k) + 5;
+                    end
+                    
+                    plot(time,dataPoints1,'b',time,dataPoints2,'g',time,dataPoints3,'r')
+                    axis([0 (k+10) -Ymax Ymax])
+
+                    drawnow;
+                    k=k+1;
+
+                    handles = guidata(hObject);
+                else
+                    break;
+                end
+            end
     end
 end
+
+% Update handles structure
+guidata(hObject, handles);
 
 
 % --- Executes on button press in StopDataCollection.
@@ -219,3 +328,33 @@ end
 
 % Hint: delete(hObject) closes the figure
 delete(hObject);
+
+
+% --- Executes when figure1 is resized.
+function figure1_ResizeFcn(hObject, eventdata, handles)
+% hObject    handle to figure1 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+
+% --- Executes on selection change in NumberOfInputs.
+function NumberOfInputs_Callback(hObject, eventdata, handles)
+% hObject    handle to NumberOfInputs (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: contents = cellstr(get(hObject,'String')) returns NumberOfInputs contents as cell array
+%        contents{get(hObject,'Value')} returns selected item from NumberOfInputs
+
+
+% --- Executes during object creation, after setting all properties.
+function NumberOfInputs_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to NumberOfInputs (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: popupmenu controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
