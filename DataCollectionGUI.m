@@ -80,7 +80,7 @@ if isfield(handles, 'Port');
 
     switch str2double(CurrentValue)
         case 1
-            dataPoints=0; time=0; k=1; Ymax = 0;
+            dataPoints=0; time=0; k=1; Ymax = 5;
             while(k < 1000) && ~handles.stop
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
@@ -115,7 +115,7 @@ if isfield(handles, 'Port');
             end
 
         case 2
-            dataPoints1=0; dataPoints2=0; time=0; k=1; Ymax = 0;
+            dataPoints1=0; dataPoints2=0; time=0; k=1; Ymax = 5;
             while(k < 1000) && ~handles.stop
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
@@ -152,7 +152,7 @@ if isfield(handles, 'Port');
             end
 
         case 3
-            dataPoints1=0; dataPoints2=0; dataPoints3=0; time=0; k=1; Ymax = 0;
+            dataPoints1=0; dataPoints2=0; dataPoints3=0; time=0; k=1; Ymax = 5;
             while(k < 1000) && ~handles.stop
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
@@ -214,11 +214,27 @@ guidata(hObject, handles);
 
 
 
+
 % --- Executes on button press in SaveData.
 function SaveData_Callback(hObject, eventdata, handles)
 % hObject    handle to SaveData (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+[filename, pathname] = uiputfile( ...
+{'*.m;*.fig;*.mat;*.slx;*.mdl',...
+ 'MATLAB Files (*.m,*.fig,*.mat,*.slx,*.mdl)';
+   '*.m',  'Code files (*.m)'; ...
+   '*.fig','Figures (*.fig)'; ...
+   '*.mat','MAT-files (*.mat)'; ...
+   '*.mdl;*.slx','Models (*.slx, *.mdl)'; ...
+   '*.*',  'All Files (*.*)'}, ...
+   'Save file as');
+if isequal(filename,0)
+   set(handles.InputFeedback, 'String', 'Cancel selected');
+else
+   figure = handles.Plot;
+   hgsave(figure, fullfile(pathname, filename));
+end
 
 
 % --- Executes on selection change in CommPorts.
