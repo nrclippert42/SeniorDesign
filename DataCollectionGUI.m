@@ -1,6 +1,12 @@
 function varargout = DataCollectionGUI(varargin)
 % DATACOLLECTIONGUI MATLAB code for DataCollectionGUI.fig
 %
+% This GUI will allow you to connect to an available serial port. It has
+% functionality to allow you to gracfully connect and disconnect. Once
+% connected to a port the data can then be plotted. This is usefull for
+% mesuring various wave forms with a data aquisition unit.
+% 
+% Tutorial:
 %   http://www.mathworks.com/help/matlab/creating_guis/add-code-for-components-in-callbacks.html
 %
 % Last Modified by GUIDE v2.5 05-May-2015 18:20:30
@@ -69,7 +75,7 @@ function GetData_Callback(hObject, ~, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 if isfield(handles, 'Port');
-    
+    tic
     handles.stop = 0;
     % Update handles structure
     guidata(hObject, handles);
@@ -82,9 +88,10 @@ if isfield(handles, 'Port');
         case 1
             dataPoints=0; time=0; k=1; Ymax = 5;
             while(k < 1000) && ~handles.stop
+                set(handles.GetData, 'Enable', 'off');
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
-                numbers = str2num(line);
+                numbers = str2num(line)
                 % check the length of numbers to avoid erros
                 if numel(numbers) == 0
                     set(handles.InputFeedback, 'String', 'Hit the button agian');
@@ -100,7 +107,7 @@ if isfield(handles, 'Port');
                     end
 
                     plot(time,dataPoints)
-                    axis([0 (k+10) -Ymax Ymax])
+                    axis([0 k -Ymax Ymax])
 
                     drawnow;
                     k=k+1;
@@ -113,10 +120,12 @@ if isfield(handles, 'Port');
                     break;
                 end
             end
+            set(handles.GetData, 'Enable', 'on');
 
         case 2
             dataPoints1=0; dataPoints2=0; time=0; k=1; Ymax = 5;
             while(k < 1000) && ~handles.stop
+                set(handles.GetData, 'Enable', 'off');
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
                 numbers = str2num(line);
@@ -150,10 +159,12 @@ if isfield(handles, 'Port');
                     break;
                 end
             end
+            set(handles.GetData, 'Enable', 'on');
 
         case 3
             dataPoints1=0; dataPoints2=0; dataPoints3=0; time=0; k=1; Ymax = 5;
             while(k < 1000) && ~handles.stop
+                set(handles.GetData, 'Enable', 'off');
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
                 numbers = str2num(line);
@@ -195,9 +206,10 @@ if isfield(handles, 'Port');
                     break;
                 end
             end
+            set(handles.GetData, 'Enable', 'on');
     end
 end
-
+toc
 % Update handles structure
 guidata(hObject, handles);
 
@@ -272,7 +284,7 @@ CurrentValue = contents{get(handles.CommPorts,'Value')};
 
 if ~strcmp(CurrentValue, 'No Connections Available')
     % create the serial port
-    Port = serial(CurrentValue, 'Timeout', 1, 'Baudrate', 11520);
+    Port = serial(CurrentValue, 'Timeout', 1, 'Baudrate', 9600);
     try
         % opent the port and save it in the 
         fopen(Port);
