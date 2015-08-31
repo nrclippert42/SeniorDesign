@@ -75,7 +75,7 @@ function GetData_Callback(hObject, ~, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 if isfield(handles, 'Port');
-    tic
+%     tic
     handles.stop = 0;
     % Update handles structure
     guidata(hObject, handles);
@@ -91,7 +91,7 @@ if isfield(handles, 'Port');
                 set(handles.GetData, 'Enable', 'off');
                 line = fscanf(handles.Port);
                 % use numbers(2), numbers(3) ... for more graphs    
-                numbers = str2num(line)
+                numbers = str2num(line);
                 % check the length of numbers to avoid erros
                 if numel(numbers) == 0
                     set(handles.InputFeedback, 'String', 'Hit the button agian');
@@ -209,7 +209,7 @@ if isfield(handles, 'Port');
             set(handles.GetData, 'Enable', 'on');
     end
 end
-toc
+% toc
 % Update handles structure
 guidata(hObject, handles);
 
@@ -284,7 +284,7 @@ CurrentValue = contents{get(handles.CommPorts,'Value')};
 
 if ~strcmp(CurrentValue, 'No Connections Available')
     % create the serial port
-    Port = serial(CurrentValue, 'Timeout', 1, 'Baudrate', 9600);
+    Port = serial(CurrentValue, 'Timeout', 1, 'Baudrate', 500000);
     try
         % opent the port and save it in the 
         fopen(Port);
