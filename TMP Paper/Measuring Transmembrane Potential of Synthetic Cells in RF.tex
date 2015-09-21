@@ -1,0 +1,112 @@
+%\documentclass[a4paper,10pt]{article}
+%\usepackage[utf8]{inputenc}
+
+\documentclass[journal]{IEEEtran}
+\usepackage{blindtext}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{pdfpages}
+
+\title{Measuring Transmembrane Potential of Synthetic Cells in Radio Frequency Spectrum}
+\author{Andrew Bossert, Christopher Jordan - Denny, Nicolette Lippert}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This article explores using dielectric spectroscopy in an attempt to measure the trans-membrane potential of synthetic cells in radio frequency spectrum. The purpose of this test is to "mimic" a capacitor with the cell suspension acting as a dielectric. This is a non-invasive way to measure the average membrane potential across your cell suspension and has been proven in \cite{Dielectric Spectroscopy} for frequencies up to $10^5 Hz$.
+\end{abstract}
+
+\section{Calculating Membrane Potential}
+We model the impedance of the cell suspension as a resitor $R = d/\sigma A$ in parallel with a capacitor $C = \epsilon A/d$, where $\sigma$ and $\epsilon$ are the conductivity and dielectric permittivity of the cell suspension and $A$ and $d$ are the surface area of the two disk electrodes and the distance between them. 
+
+\begin{equation}
+\label{conductivity}
+\sigma(\omega) = Re\frac{d_1-d_2}{A(Z_1^O-Z_2^O)}
+\end{equation}
+
+\begin{equation}
+\label{permittivity}
+\epsilon(\omega) = Im\frac{d_1-d_2}{\omega A(Z_1^O-Z_2^O)}
+\end{equation}
+
+Electrode distance variation technique:
+
+\begin{equation}
+\begin{aligned}
+\label{variation technique derivation}
+\mathcal Z_1^S-Z^P &= Z_1^O \\
+\mathcal Z_2^S-Z^P &= Z_2^O
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\label{variation technique}
+Z_1^S-Z_2^S = Z_1^O - Z_2^O
+\end{equation}
+
+Where $Z^S$ is the sample impedance, $Z^P$ is the unknown polarization impedance, and $Z^O$ is the measured impedance. \\
+
+I have been assured by Dr.Dharmakeerthi Nawarathna that equation (\ref{conductivity}) and equation (\ref{permittivity}) are sufficient in finding the potential of the solution.
+
+\section{Distance Between Plates:}
+With regards to near and far field transmission. The most agreed upon definition of near field transmission is less than one wavelength($\lambda$) away \cite{near-far-em}. If we consider a sinusoidal wave traveling at a constant speed, we can calculate wavelength with the following formula \ldots
+
+\begin{equation}
+\label{wavelength}
+\lambda = \frac{v}{f}
+\end{equation}
+
+Where $v$ is the magnitude of the phase velocity and $f$ is the frequency of the sinusoid. It is difficult to determine the phase velocity of our electromagnetic wave while propagating through our cell suspension, but if we consider water, we can make a prediction of the wavelength. The velocity of EM waves is more than 4 orders faster than acoustic waves according to \cite{wave-propagation-water}. Knowing that the speed of sound is $343.2 m/s$ we can say \ldots
+
+\begin{equation}
+\label{near-wavelength-water}
+\lambda = \frac{343.2 \cdot 4}{10^9} = 1.3728 \times 10^{-6} m
+\end{equation}
+
+Water is a good basis for the phase velocity as the cell suspension is made from deonized water and synthetic cells. I used $10^9 Hz$ as our frequency, which is in the radio spectrum. Our micrometer is sensitive to $10\mu m$, thus our test fixture will be capable of measuring only waves 10 times greater than the fundamental wavelength, meaning far field transmissions will be measured. This is a satisfactory result, as the far field is the "real" radio waves, that propagate through space at just about the speed of light \cite{near-far-em}. 
+
+\section{Materials and Methods}
+
+\subsection{Copper Plates}
+Two copper plates ~20mm in diameter will be used. One plate will be fixed to the bottom of the beaker and the other is attached to a micrometer.
+
+\subsection{Copper Wire Leads}
+Two wires will be attached to the copper plates. The wire attached to the fixed bottom plate will run up the side of the beaker to later be attached to a network analyzer.The second wire will be attached to top plate and also run up the side of the beaker to be attached to a network analyzer. These two wires will provide the radio frequency signal and the probes to be attached to a network analyzer.
+
+\subsection{Glass Beaker}
+A glass beaker will be used to hold the cell suspension and two plates. It will be placed in the center of the Test fixture stand.
+
+\subsection{Micrometer}
+A micrometer will be used to adjust the height of one of the copper plates. The micrometer will be attached to the test fixture stand, and the drive of the micrometer will be attached to one of the copper plates.
+
+\subsection{Test Fixture Stand}
+Provide a base for the beaker as well as an accurate and stable micrometer mount.This item will be 3D printed.
+
+\section{Conclusion}
+The reason for the test fixture is to hold a beaker dish and  adjust the height between the two parallel copper plates. In order to be as accurate as possible a micrometer will be attached to the top copper plate and then attached to the top of the test fixture. This will allow us to accurately set the parallel plate distance and also change the height as needed. 
+
+\section{Acknowledgement}
+The authors would like to acknowledge Daniel Ewert and Jared Hansen for their leadership in this project.
+
+\begin{thebibliography}{9}
+
+\bibitem{Dielectric Spectroscopy}
+C.Prodan,F.Mayo,J.R.Claycomb,J.H.Miller,Jr,M.J.Benedik.
+\textit{Low-frequency, low-field dielectric spectroscopy of living cell suspensions}.
+Journal of Applied Physics, Volume 95, Number 7, April 2004
+
+\bibitem{wave-propagation-water}
+Shan Jiang, Stavros Georgakopoulos.
+\textit{Electromagnetic Wave Propagation into Fresh Water}.
+Journal of Electromagnetic Analysis and Applications,2011,3,261-266
+
+\bibitem{near-far-em}
+Lou Frenzel.
+\textit{What is the Difference Between EM Near Field and Far Field}.
+Electronic Design, June 8, 2012
+
+\end{thebibliography}
+
+\end{document}
