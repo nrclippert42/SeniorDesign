@@ -9,6 +9,9 @@
 
 \graphicspath{ {Pictures/} }
 
+\markboth{North Dakota State University, December~2015}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+
 \title{Measuring Transmembrane Potential of Synthetic Cells in Radio Frequency Spectrum}
 \author{Andrew Bossert, Christopher Jordan - Denny, Nicolette Lippert}
 
@@ -17,8 +20,14 @@
 \maketitle
 
 \begin{abstract}
-This article explores using dielectric spectroscopy in an attempt to measure the trans-membrane potential of synthetic cells in radio frequency spectrum. The purpose of this test is to "mimic" a capacitor with the cell suspension acting as a dielectric. This is a non-invasive way to measure the average membrane potential across your cell suspension and has been proven in \cite{Dielectric Spectroscopy} for frequencies up to $10^5 Hz$.
+This article explores using dielectric spectroscopy in an attempt to measure the trans-membrane potential of synthetic cells in radio frequency spectrum. The purpose of this test is to "mimic" a capacitor with the cell suspension acting as a dielectric. This is a non-invasive way to measure the average membrane potential across your cell suspension and has been proven in \cite{Dielectric Spectroscopy} for frequencies up to \textbf{$10^5 Hz$}.
 \end{abstract}
+
+\section{Implications of Membrane Potential}
+Although there may be many implications of transmembrane potential at radio frequencies, the focus of this example is in disease models. In the late 1930's it was suggested that a relationship lie between cancer and the bioelectric properties of host tissue. Interestingly, membrane voltage ($V_{mem}$) analysis in many different mammalian cell types reveals that proliferative potential is correlated with unique ranges of $V_{mem}$ : quiescent cells tend to be hyperpolarized, whereas highly plastic cells such as embryonic cells,adult stem cells and tumors cells are depolarized. \cite{TMP-implications}. During the early stages of tumor formation, $V_{mem}$ is a key regulator of the cell cycle and determines the proliferative state of many different kinds of cells. These statements excite the possibility of non-invasive techniques being used to track bioelectric cell states and detection of tumors, or even mitigation of tumor formation by canonical oncogene.
+
+\section{Hypothesis}
+
 
 \section{Calculating Membrane Potential}
 We model the impedance of the cell suspension as a resitor $R = d/\sigma A$ in parallel with a capacitor $C = \epsilon A/d$, where $\sigma$ and $\epsilon$ are the conductivity and dielectric permittivity of the cell suspension and $A$ and $d$ are the surface area of the two disk electrodes and the distance between them. 
@@ -118,6 +127,11 @@ Journal of Electromagnetic Analysis and Applications,2011,3,261-266
 Lou Frenzel.
 \textit{What is the Difference Between EM Near Field and Far Field}.
 Electronic Design, June 8, 2012
+
+\bibitem{TMP-implications}
+Brook T.Chernet and Michael Levin
+\textit{Transmembrane voltage potential is an essential cellular parameter for the detection and control of tumor development in a Xenopus model}. 
+Disease Models & Mechanisms 6, 595-607 (2013)
 
 \end{thebibliography}
 
