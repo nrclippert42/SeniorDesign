@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -137,11 +137,12 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="20.05" y2="0.03" width="0" layer="20"/>
-<wire x1="20.05" y1="0.03" x2="20.07" y2="15.23" width="0" layer="20"/>
-<wire x1="20.07" y1="15.23" x2="0" y2="15.23" width="0" layer="20"/>
-<wire x1="0" y1="15.23" x2="0" y2="0" width="0" layer="20"/>
-<dimension x1="0.05" y1="-4.89" x2="20.05" y2="-6.94" x3="10.05" y3="-2.94" textsize="1.778" layer="21" dtype="horizontal"/>
+<wire x1="0" y1="0" x2="30" y2="0.06" width="0" layer="20"/>
+<wire x1="30" y1="0.06" x2="30.04" y2="14.83" width="0" layer="20"/>
+<wire x1="30.04" y1="14.83" x2="0.07" y2="14.87" width="0" layer="20"/>
+<wire x1="0.07" y1="14.87" x2="0" y2="0" width="0" layer="20"/>
+<dimension x1="0.05" y1="-4.89" x2="30.06" y2="-6.83" x3="15.055" y3="-2.94" textsize="1.778" layer="21" dtype="horizontal"/>
+<dimension x1="0.07" y1="14.87" x2="0" y2="0" x3="-3.16" y3="7.435" textsize="1.778" layer="21" dtype="vertical"/>
 </plain>
 <libraries>
 <library name="sparkfun-connectors">
@@ -408,43 +409,27 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="J$1" library="sparkfun-connectors" package="SMA-EDGE" value="SMA_EDGE" x="1.44" y="2.69"/>
-<element name="J$2" library="sparkfun-connectors" package="SMA-EDGE" value="SMA_EDGE" x="13.54" y="2.73"/>
-<element name="PORT" library="con-phoenix-350" package="1751248" value="1751248" x="10" y="11.43" rot="MR0">
-<attribute name="OC_NEWARK" value="unknown" x="10" y="11.43" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MPN" value="" x="10" y="11.43" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="MF" value="" x="10" y="11.43" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="OC_FARNELL" value="unknown" x="10" y="11.43" size="1.778" layer="28" rot="MR0" display="off"/>
+<element name="J$1" library="sparkfun-connectors" package="SMA-EDGE" value="SMA_EDGE" x="2.92" y="9.99" rot="R270"/>
+<element name="J$2" library="sparkfun-connectors" package="SMA-EDGE" value="SMA_EDGE" x="27.41" y="4.9" rot="R90"/>
+<element name="PORT" library="con-phoenix-350" package="1751248" value="1751248" x="14.94" y="7.54" rot="MR0">
+<attribute name="OC_NEWARK" value="unknown" x="14.94" y="7.54" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="MPN" value="" x="14.94" y="7.54" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="MF" value="" x="14.94" y="7.54" size="1.778" layer="28" rot="MR0" display="off"/>
+<attribute name="OC_FARNELL" value="unknown" x="14.94" y="7.54" size="1.778" layer="28" rot="MR0" display="off"/>
 </element>
 </elements>
 <signals>
-<signal name="N$3">
-<contactref element="J$1" pad="SIG"/>
-<contactref element="PORT" pad="2"/>
-<wire x1="4" y1="7" x2="8.25" y2="11.25" width="0.762" layer="1"/>
-<wire x1="4" y1="2.75" x2="4" y2="7" width="0.762" layer="1"/>
-<wire x1="8.25" y1="11.25" x2="8.25" y2="11.33" width="0.762" layer="1"/>
-<wire x1="4" y1="2.75" x2="3.98" y2="2.69" width="0.762" layer="1"/>
-</signal>
-<signal name="N$4">
-<contactref element="J$2" pad="SIG"/>
-<contactref element="PORT" pad="1"/>
-<wire x1="16" y1="7" x2="11.75" y2="11.25" width="0.762" layer="1"/>
-<wire x1="16" y1="2.75" x2="16" y2="7" width="0.762" layer="1"/>
-<wire x1="11.75" y1="11.25" x2="11.75" y2="11.33" width="0.762" layer="1"/>
-<wire x1="16" y1="2.75" x2="16.08" y2="2.73" width="0.762" layer="1"/>
-</signal>
 <signal name="GND">
 <polygon width="0.254" layer="16">
-<vertex x="0.17" y="15.09"/>
-<vertex x="19.9" y="15.09"/>
-<vertex x="19.9" y="0.22"/>
-<vertex x="0.17" y="0.22"/>
+<vertex x="0.29" y="14.71"/>
+<vertex x="29.82" y="14.53"/>
+<vertex x="29.89" y="0.14"/>
+<vertex x="0.24" y="0.22"/>
 </polygon>
 <polygon width="0.254" layer="1" spacing="1.6764">
-<vertex x="0.26" y="15.04"/>
-<vertex x="19.88" y="15.04"/>
-<vertex x="19.88" y="0.2"/>
+<vertex x="0.33" y="14.61"/>
+<vertex x="29.81" y="14.56"/>
+<vertex x="29.81" y="0.22"/>
 <vertex x="0.26" y="0.2"/>
 </polygon>
 <contactref element="J$2" pad="GND@0"/>
@@ -455,7 +440,21 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="J$1" pad="GND@1"/>
 <contactref element="J$1" pad="GND@2"/>
 <contactref element="J$1" pad="GND@3"/>
-<wire x1="1.44" y1="2.69" x2="1.44" y2="2.69" width="0" layer="19" extent="1-16"/>
+<wire x1="2.92" y1="4.91" x2="2.92" y2="4.91" width="0" layer="19" extent="1-16"/>
+</signal>
+<signal name="N$1">
+<contactref element="J$2" pad="SIG"/>
+<contactref element="PORT" pad="1"/>
+<wire x1="27.25" y1="7.25" x2="16.75" y2="7.25" width="0.762" layer="1"/>
+<wire x1="16.75" y1="7.25" x2="16.69" y2="7.44" width="0.762" layer="1"/>
+<wire x1="27.25" y1="7.25" x2="27.41" y2="7.44" width="0.762" layer="1"/>
+</signal>
+<signal name="N$2">
+<contactref element="J$1" pad="SIG"/>
+<contactref element="PORT" pad="2"/>
+<wire x1="3" y1="7.25" x2="13" y2="7.25" width="0.762" layer="1"/>
+<wire x1="13" y1="7.25" x2="13.19" y2="7.44" width="0.762" layer="1"/>
+<wire x1="3" y1="7.25" x2="2.92" y2="7.45" width="0.762" layer="1"/>
 </signal>
 </signals>
 </board>

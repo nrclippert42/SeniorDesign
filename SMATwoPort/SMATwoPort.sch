@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.2.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -361,20 +361,22 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <busses>
 </busses>
 <nets>
-<net name="N$3" class="0">
-<segment>
-<pinref part="J$1" gate="1" pin="SIGNAL"/>
-<pinref part="PORT" gate="-2" pin="K"/>
-<wire x1="58.42" y1="38.1" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
-<wire x1="58.42" y1="33.02" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$4" class="0">
+<net name="N$1" class="0">
 <segment>
 <pinref part="J$2" gate="1" pin="SIGNAL"/>
 <pinref part="PORT" gate="-1" pin="K"/>
 <wire x1="30.48" y1="58.42" x2="58.42" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="58.42" x2="58.42" y2="45.72" width="0.1524" layer="91"/>
+<junction x="58.42" y="45.72"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="J$1" gate="1" pin="SIGNAL"/>
+<pinref part="PORT" gate="-2" pin="K"/>
+<wire x1="30.48" y1="33.02" x2="58.42" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="58.42" y1="33.02" x2="58.42" y2="38.1" width="0.1524" layer="91"/>
+<junction x="58.42" y="38.1"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -388,13 +390,17 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <wire x1="20.32" y1="48.26" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="45.72" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="50.8" x2="20.32" y2="50.8" width="0.1524" layer="91"/>
-<junction x="20.32" y="50.8"/>
 <pinref part="J$2" gate="1" pin="GND@2"/>
 <wire x1="22.86" y1="48.26" x2="20.32" y2="48.26" width="0.1524" layer="91"/>
-<junction x="20.32" y="48.26"/>
 <pinref part="J$2" gate="1" pin="GND@3"/>
 <wire x1="22.86" y1="45.72" x2="20.32" y2="45.72" width="0.1524" layer="91"/>
+<junction x="22.86" y="53.34"/>
+<junction x="22.86" y="50.8"/>
+<junction x="22.86" y="48.26"/>
+<junction x="22.86" y="45.72"/>
 <junction x="20.32" y="45.72"/>
+<junction x="20.32" y="48.26"/>
+<junction x="20.32" y="50.8"/>
 </segment>
 <segment>
 <pinref part="J$1" gate="1" pin="GND@0"/>
@@ -406,13 +412,17 @@ Source: http://eshop.phoenixcontact.com .. 1751248.pdf</description>
 <wire x1="20.32" y1="22.86" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="20.32" y1="20.32" x2="20.32" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="25.4" x2="20.32" y2="25.4" width="0.1524" layer="91"/>
-<junction x="20.32" y="25.4"/>
 <pinref part="J$1" gate="1" pin="GND@2"/>
 <wire x1="22.86" y1="22.86" x2="20.32" y2="22.86" width="0.1524" layer="91"/>
-<junction x="20.32" y="22.86"/>
 <pinref part="J$1" gate="1" pin="GND@3"/>
 <wire x1="22.86" y1="20.32" x2="20.32" y2="20.32" width="0.1524" layer="91"/>
+<junction x="20.32" y="25.4"/>
+<junction x="22.86" y="25.4"/>
+<junction x="22.86" y="27.94"/>
+<junction x="22.86" y="22.86"/>
+<junction x="20.32" y="22.86"/>
 <junction x="20.32" y="20.32"/>
+<junction x="22.86" y="20.32"/>
 </segment>
 </net>
 </nets>
