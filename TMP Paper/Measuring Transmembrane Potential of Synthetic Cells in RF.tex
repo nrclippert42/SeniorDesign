@@ -6,13 +6,20 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{pdfpages}
+\usepackage{hyperref}
+
+\hypersetup{
+	colorlinks = true,
+	citecolor = {blue},
+	urlcolor = {black}
+}
 
 \graphicspath{ {Pictures/} }
 
 \markboth{North Dakota State University, December~2015}%
 {Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
 
-\title{Measuring Transmembrane Potential of Synthetic Cells in Radio Frequency Spectrum}
+\title{Measuring Transmembrane Potential of Myelomas Hypridoma cell culture in Radio Frequency Spectrum}
 \author{Andrew Bossert, Christopher Jordan - Denny, Nicolette Lippert}
 
 \begin{document}
@@ -78,7 +85,7 @@ Where $v$ is the magnitude of the phase velocity and $f$ is the frequency of the
 
 Water is a good basis for the phase velocity as the cell suspension is made from deonized water and synthetic cells. I used $10^9 Hz$ as our frequency, which is in the radio spectrum. Our micrometer is sensitive to $10\mu m$, thus our test fixture will be capable of measuring only waves 10 times greater than the fundamental wavelength, meaning far field transmissions will be measured. This is a satisfactory result, as the far field is the "real" radio waves, that propagate through space at just about the speed of light \cite{near-far-em}. 
 
-\section{Materials and Methods}
+\section{Materials}
 
 \begin{figure}[h]
 \label{test-fixture}
@@ -86,23 +93,36 @@ Water is a good basis for the phase velocity as the cell suspension is made from
 \end{figure}
 
 \subsection{Copper Plates}
-Two copper plates ~20mm in diameter will be used. One plate will be fixed to the bottom of the beaker and the other is attached to a micrometer.
+Two copper plates $3/4 \: inch$ in diameter will be used. One plate will be fixed to the bottom of the beaker and the other is attached to a micrometer. To create the copper plates a hole puncher will be used.
 
 \subsection{Copper Wire Leads}
-Two wires will be attached to the copper plates. The wire attached to the fixed bottom plate will run up the side of the beaker to later be attached to a network analyzer.The second wire will be attached to top plate and also run up the side of the beaker to be attached to a network analyzer. These two wires will provide the radio frequency signal and the probes to be attached to a network analyzer.
+Two wires will be attached to the copper plates. The wire attached to the fixed bottom plate will be attached to the center and run through the bottom of the test fixture to later be attached to a network analyzer.The second wire will be attached to top plate on one of the edges and run up the side of the beaker to be attached to a network analyzer. These two wires will provide the radio frequency signal and the probes to be attached to a network analyzer.
 
-\subsection{Glass Beaker}
-A glass beaker will be used to hold the cell suspension and two plates. It will be placed in the center of the Test fixture stand.
+\subsection{3-D printed Beaker}
+A 3-D printed beaker will be made to perfectly fit the test fixture. The beaker will be made of ABS plastic and is used to hold the cell suspension and two copper plates. It will be placed in the center of the Test fixture stand.
 
 \subsection{Micrometer}
-A micrometer will be used to adjust the height of one of the copper plates. The micrometer will be attached to the test fixture stand, and the drive of the micrometer will be attached to one of the copper plates.
+A micrometer will be used to adjust the height of one of the copper plates. The micrometer will be attached to the test fixture stand, and the drive of the micrometer will be attached to one of the copper plates. A micrometer cap will be 3-D printed in ABS plastic to perfectly fit the micrometer and later be adhered to the copper plate.
 
 \subsection{Test Fixture Stand}
-Provide a base for the beaker as well as an accurate and stable micrometer mount.This item will be 3D printed.
+Provide a base for the beaker as well as an accurate and stable micrometer mount.This item will be 3D printed with ABS plastic.
+
+\subsection{Cells}
+SP 2/0 myelomas hypridoma cell line. These are nonadherent cells, and are essentially cancer cells from mice.\cite{mouse-myeloma-hybridoma-strain} They are rated at biosafety level 1. This level is suitable for work involving well-characterized agents not known to consistently cause disease in healthy adult humans, and of minimal potential hazard to laboratory peronnel and the environment. Reasearch with these agents may be performed on standard open laboratory benches without the use of special containment equipment and it is not necessary for Biosafety level 1 labs to be isolated from the general building.\cite{biosafety-levels}
 
 \begin{figure}[h]
 \label{test-fixture}
-\includegraphics[width=8cm]{Combined_Test_Fixture_Beaker_View.png}
+\includegraphics[width=8cm]{Beaker.png}
+\end{figure}
+
+\section{Methods}
+
+\subsection{Cell Concentration}
+The cell concentration will be measured using a hemocytometer. An example of the process of counting the cells can be seen in figure
+
+\begin{figure}[h]
+\label{hemocytometer}
+\includegraphics[width=9cm]{hemocytometer.jpg}
 \end{figure}
 
 \section{Conclusion}
@@ -132,6 +152,16 @@ Electronic Design, June 8, 2012
 Brook T.Chernet and Michael Levin
 \textit{Transmembrane voltage potential is an essential cellular parameter for the detection and control of tumor development in a Xenopus model}. 
 Disease Models & Mechanisms 6, 595-607 (2013)
+
+\bibitem{biosafety-levels}
+Center for Disease Control and Prevention
+\textit{Recognizing the Biosafety Levels}.
+\url{www.cdc.gov/training/QuickLearns/biosafety/}
+
+\bibitem{mouse-myeloma-hybridoma-strain}
+ATCC
+\textit{Mouse Myeloma Hybridoma Strain 6C2-4 (PTA-970)}.
+American Type Culture Collection
 
 \end{thebibliography}
 
