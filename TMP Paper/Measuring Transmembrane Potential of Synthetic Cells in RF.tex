@@ -85,6 +85,44 @@ Where $v$ is the magnitude of the phase velocity and $f$ is the frequency of the
 
 Water is a good basis for the phase velocity as the cell suspension is made from deonized water and synthetic cells. I used $10^9 Hz$ as our frequency, which is in the radio spectrum. Our micrometer is sensitive to $10\mu m$, thus our test fixture will be capable of measuring only waves 10 times greater than the fundamental wavelength, meaning far field transmissions will be measured. This is a satisfactory result, as the far field is the "real" radio waves, that propagate through space at just about the speed of light \cite{near-far-em}. 
 
+\section{S-Parameters}
+At low frequencies it is common to use the transfer and impedance matrices, since this experiment used high frequencies scattering parameters are more preferable. A linear two-port network is used to characterize the equivalent circuit parameters for our experiment. More specifically Scattering parameters are used to relate the outgoing waves $b_1,b_2$ to the incoming waves $a_1,a_2$. The parameters $S_{11},S_{22}$ are the reflection coefficients, or the ratio of the amplitude of the reflected wave to the incident wave. The parameters $S_{21},S_{12}$ are the transmission coefficients, or the amplitude, intensity or total power of a transmitted wave relative to a incident wave (Power of propagation through a medium). As a reminder the incident wave is the wave traveling from source to load, as the reflected wave is the traveling from load to source.
+
+\begin{figure}[h]
+\label{Equivalent_Circuit}
+\includegraphics[width=8cm]{two_port.png}
+\end{figure}
+
+\begin{figure}[h]
+\label{Equivalent_Circuit}
+\includegraphics[width=8cm]{Equivalent_Circuit.png}
+\end{figure}
+
+\begin{equation}
+\label{thevenin-equation-1}
+V_{th} = \frac{Z_{21}\cdot V_G}{Z_{11}+Z_{G}}, Z_{th}=Z_{out}=Z_{22}-\frac{Z_{12}\cdot Z_{21}}{Z_{11}+Z_G}
+\end{equation}
+
+\begin{equation}
+\label{thevenin-equation-1}
+Z_{in}=Z_{11}-\frac{Z_{12}\cdot Z_{21}}{Z_{22}+Z_L}
+\end{equation}
+
+\begin{equation}
+\label{s-conversion}
+Z = \frac{Z_O}{D_s}
+\begin{bmatrix}
+A & 2\cdot S_{12}\\ 
+ 2\cdot S_{21} & D
+\end{bmatrix}
+\end{equation}
+
+\begin{align*}
+A &= (1+S_{11})(1-S_{22})+S_{12}S_{21}\\
+D &= (1-S_{11})(1+S_{22})+S_{12}S_{21}\\
+D_s &= det(I-S) = (1-S_{11})(1-S_{22})-S_{12}S_{21}
+\end{align*}
+
 \section{Materials}
 
 \begin{figure}[h]
@@ -109,6 +147,14 @@ Provide a base for the beaker as well as an accurate and stable micrometer mount
 
 \subsection{Cells}
 SP 2/0 myelomas hypridoma cell line. These are nonadherent cells, and are essentially cancer cells from mice.\cite{mouse-myeloma-hybridoma-strain} They are rated at biosafety level 1. This level is suitable for work involving well-characterized agents not known to consistently cause disease in healthy adult humans, and of minimal potential hazard to laboratory peronnel and the environment. Reasearch with these agents may be performed on standard open laboratory benches without the use of special containment equipment and it is not necessary for Biosafety level 1 labs to be isolated from the general building.\cite{biosafety-levels}
+
+\subsection{Hewlett-Packard 8735E Network Analyzer 30kHz - 6GHz}
+Used with this network analyzer was the Agilent 11857D 7mm test port returns($50\Omega$). This network analyzer was used to gather our scattering parameters. This version features the 006 option which give it a 6 GHz upper frequency range.\\
+Resolution: $1 Hz$ \\
+Stability: typically $\pm7.5 ppm$ \\
+Accuracy: $\pm10 ppm$\\
+Resolution: $0.05 dB$
+
 
 \begin{figure}[h]
 \label{test-fixture}
