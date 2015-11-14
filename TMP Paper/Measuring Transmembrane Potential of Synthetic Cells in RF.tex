@@ -108,19 +108,12 @@ V_{th} = \frac{Z_{21}\cdot V_G}{Z_{11}+Z_{G}}, Z_{th}=Z_{out}=Z_{22}-\frac{Z_{12
 Z_{in}=Z_{11}-\frac{Z_{12}\cdot Z_{21}}{Z_{22}+Z_L}
 \end{equation}
 
-\begin{equation}
-\label{s-conversion}
-Z = \frac{Z_O}{D_s}
-\begin{bmatrix}
-A & 2\cdot S_{12}\\ 
- 2\cdot S_{21} & D
-\end{bmatrix}
-\end{equation}
-
 \begin{align*}
-A &= (1+S_{11})(1-S_{22})+S_{12}S_{21}\\
-D &= (1-S_{11})(1+S_{22})+S_{12}S_{21}\\
-D_s &= det(I-S) = (1-S_{11})(1-S_{22})-S_{12}S_{21}
+\label{s-conversion-z}
+Z_{11} &= Z_0\frac{(1+S_{11})(1-S_{22})+S_{12}S_{21}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}} \\
+Z_{12} &= Z_0\frac{2S_{12}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}} \\
+Z_{21} &= Z_0\frac{2S_{21}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}} \\
+Z_{22} &= Z_0\frac{ (1-S_{11})(1+S_{22})+S_{12}S_{21}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}}
 \end{align*}
 
 \section{Materials}
@@ -234,6 +227,18 @@ For bio safety level 2, use of hood, gloves, and lab coat for person protection.
 \textbf{Clean up:} \\
 If the disposable test tube has not had bleach added to it, several milliliters should be added to it. The liquid should turn light blue to clear, and now can safely be disposed. All surfaces in the hood and materials that are not disposable should be wiped down with 70\% ether solution. All equipment used that is disposable should disposed of in bio-safe bins which should be located near the hood. 
 
+\section{Experiment Procedure}
+
+\textbf{Initial Setup}
+Set the test beaker to 10 mm spacing in between plates. The first plate is located where the micrometer reads 1 mm.
+
+\textbf{Measurements of S-Parameters:}
+\begin{enumerate}
+	\item Initially we will measure the S-Parameters of our device with air as a dielectric.
+	\item Measure S-Parameters with PBS (Phosphate Buffered Saline).
+	\item Measure S-Parameters with PBS Mouse Hybridoma solution.
+\end{enumerate}
+
 \section{Conclusion}
 The reason for the test fixture is to hold a beaker dish and
   adjust the height between the two parallel copper plates. In order to be as accurate as possible a micrometer will be attached to the top copper plate and then attached to the top of the test fixture. This will allow us to accurately set the parallel plate distance and also change the height as needed. 
@@ -260,7 +265,7 @@ Electronic Design, June 8, 2012
 
 \bibitem{TMP-implications}
 Brook T.Chernet and Michael Levin
-\textit{Transmembrane voltage potential is an essential cellular parameter for the detection and control of tumor development in a Xenopus model}. Disease Models & Mechanisms 6, 595-607 (2013)
+\textit{Transmembrane voltage potential is an essential cellular parameter for the detection and control of tumor development in a Xenopus model}. Disease Models \& Mechanisms 6, 595-607 (2013)
 
 \bibitem{biosafety-levels}
 Center for Disease Control and Prevention
@@ -272,6 +277,10 @@ ATCC
 \textit{Mouse Myeloma Hybridoma Strain 6C2-4 (PTA-970)}.
 American Type Culture Collection
 
+\bibitem{Electromagnetic Waves and Antennas}
+Sophocles J. Orfanidis.
+\textit{Electromagnetic Waves and Antennas}
+Rutgers University 1999
 \end{thebibliography}
 
 \end{document}
