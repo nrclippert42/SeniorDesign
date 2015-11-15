@@ -88,25 +88,15 @@ Water is a good basis for the phase velocity as the cell suspension is made from
 \section{S-Parameters}
 At low frequencies it is common to use the transfer and impedance matrices, since this experiment used high frequencies scattering parameters are more preferable. A linear two-port network is used to characterize the equivalent circuit parameters for our experiment. More specifically Scattering parameters are used to relate the outgoing waves $b_1,b_2$ to the incoming waves $a_1,a_2$. The parameters $S_{11},S_{22}$ are the reflection coefficients, or the ratio of the amplitude of the reflected wave to the incident wave. The parameters $S_{21},S_{12}$ are the transmission coefficients, or the amplitude, intensity or total power of a transmitted wave relative to a incident wave (Power of propagation through a medium). As a reminder the incident wave is the wave traveling from source to load, as the reflected wave is the traveling from load to source.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \label{Equivalent_Circuit}
 \includegraphics[width=8cm]{two_port.png}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \label{Equivalent_Circuit}
 \includegraphics[width=8cm]{Equivalent_Circuit.png}
 \end{figure}
-
-\begin{equation}
-\label{thevenin-equation-1}
-V_{th} = \frac{Z_{21}\cdot V_G}{Z_{11}+Z_{G}}, Z_{th}=Z_{out}=Z_{22}-\frac{Z_{12}\cdot Z_{21}}{Z_{11}+Z_G}
-\end{equation}
-
-\begin{equation}
-\label{thevenin-equation-1}
-Z_{in}=Z_{11}-\frac{Z_{12}\cdot Z_{21}}{Z_{22}+Z_L}
-\end{equation}
 
 \begin{align*}
 \label{s-conversion-z}
@@ -115,6 +105,8 @@ Z_{12} &= Z_0\frac{2S_{12}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}} \\
 Z_{21} &= Z_0\frac{2S_{21}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}} \\
 Z_{22} &= Z_0\frac{ (1-S_{11})(1+S_{22})+S_{12}S_{21}}{ (1-S_{11})(1-S_{22})-S_{12}S_{21}}
 \end{align*}
+
+We can convert the found S-Parameters to Z parameters and get the model of our Device Under Test (DUT) as shown in the resistor network above.
 
 \section{Materials}
 
@@ -230,7 +222,7 @@ If the disposable test tube has not had bleach added to it, several milliliters 
 \section{Experiment Procedure}
 
 \textbf{Initial Setup}
-Set the test beaker to 10 mm spacing in between plates. The first plate is located where the micrometer reads 1 mm.
+Set the test beaker to 10 mm spacing in between plates. The first plate is located where the micrometer reads 1 mm. Connect the Agilent 11857D 7mm test port returns($50\Omega$) to the network analyzer and the SMA connectors located on the test fixture. Both wires must be screwed into lead terminals. Before moving the top plate to the desired position, insert the fluid under test. Record all measurements to the floppy disc and copy the floppy disc to be further processed. 
 
 \textbf{Measurements of S-Parameters:}
 \begin{enumerate}
@@ -238,6 +230,9 @@ Set the test beaker to 10 mm spacing in between plates. The first plate is locat
 	\item Measure S-Parameters with PBS (Phosphate Buffered Saline).
 	\item Measure S-Parameters with PBS Mouse Hybridoma solution.
 \end{enumerate}
+
+\textbf{Count Cell concentration}
+Using the method as described earlier with the hemocytometer, count the cell concentration.
 
 \section{Conclusion}
 The reason for the test fixture is to hold a beaker dish and
@@ -249,23 +244,23 @@ The authors would like to acknowledge Daniel Ewert and Jared Hansen for their le
 \begin{thebibliography}{9}
 
 \bibitem{Dielectric Spectroscopy}
-C.Prodan,F.Mayo,J.R.Claycomb,J.H.Miller,Jr,M.J.Benedik.
-\textit{Low-frequency, low-field dielectric spectroscopy of living cell suspensions}.
-Journal of Applied Physics, Volume 95, Number 7, April 2004
+C.Prodan \textit{et al.},
+"Low-frequency, low-field dielectric spectroscopy of living cell suspensions,"
+\textit{Journal of Applied Physics}, 2004.
 
 \bibitem{wave-propagation-water}
-Shan Jiang, Stavros Georgakopoulos.
-\textit{Electromagnetic Wave Propagation into Fresh Water}.
-Journal of Electromagnetic Analysis and Applications,2011,3,261-266
+Shan Jiang and Stavros Georgakopoulos,
+"Electromagnetic Wave Propagation into Fresh Water,"
+\textit{Journal of Electromagnetic Analysis and Applications},2011,pp.261-266.
 
 \bibitem{near-far-em}
-Lou Frenzel.
-\textit{What is the Difference Between EM Near Field and Far Field}.
-Electronic Design, June 8, 2012
+Lou Frenzel,
+What is the Difference Between EM Near Field and Far Field
+\textit{Electronic Design}, 2012.
 
 \bibitem{TMP-implications}
-Brook T.Chernet and Michael Levin
-\textit{Transmembrane voltage potential is an essential cellular parameter for the detection and control of tumor development in a Xenopus model}. Disease Models \& Mechanisms 6, 595-607 (2013)
+Brook T.Chernet and Michael Levin,
+Transmembrane voltage potential is an essential cellular parameter for the detection and control of tumor development in a Xenopus mode,l\textit{Disease Models \& Mechanisms}2013,pp.595-607.
 
 \bibitem{biosafety-levels}
 Center for Disease Control and Prevention
@@ -274,13 +269,13 @@ Center for Disease Control and Prevention
 
 \bibitem{mouse-myeloma-hybridoma-strain}
 ATCC
-\textit{Mouse Myeloma Hybridoma Strain 6C2-4 (PTA-970)}.
+\textit{Mouse Hybridoma (Sp 2/0), IMM010.51.2 (PTA-2360)}.
 American Type Culture Collection
 
 \bibitem{Electromagnetic Waves and Antennas}
-Sophocles J. Orfanidis.
-\textit{Electromagnetic Waves and Antennas}
-Rutgers University 1999
+Sophocles J. Orfanidis,
+Electromagnetic Waves and Antennas
+\textit{Rutgers University},1999
 \end{thebibliography}
 
 \end{document}
