@@ -108,6 +108,9 @@ Z_{22} &= Z_0\frac{ (1-S_{11})(1+S_{22})+S_{12}S_{21}}{ (1-S_{11})(1-S_{22})-S_{
 
 We can convert the found S-Parameters to Z parameters and get the model of our Device Under Test (DUT) as shown in the resistor network above.
 
+\section{Transmembrane Potential}
+The dielectric response of live cells is fundamentally different then dead cells. The main difference between the two is the membrane potential in live cells. The effect of the membrane potential is an accumulation of mobile electric charge carriers at the membrane surfaces. When you introduce a time-oscillating electric field, these charges move on the surface of the membrane. Since the mobility of these surface charges is relatively small, this effect appears only at low frequencies, typically $<10kHz$. In this range the relative dieletric permittivity of live cell suspensions can be as high as $10^6$. This phenomenon is know as the $\alpha-$relaxation effect\cite{dielectric-response}. There is a sharp frequency above which the ions can no longer follow the electric field. Above this frequency, the polarizability of the cells drastically decreases and the $\alpha$-effect disappears.
+
 \section{Materials}
 
 \begin{figure}[h]
@@ -276,6 +279,11 @@ American Type Culture Collection
 Sophocles J. Orfanidis,
 Electromagnetic Waves and Antennas
 \textit{Rutgers University},1999
+
+\bibitem{dielectric-response}
+Emil Prodan \textit{et al.},
+"The Dielectric Response of Spherical Live Cells in Suspension: An Analytic Solution," \textit{Biophysical Journal}, 2008
+
 \end{thebibliography}
 
 \end{document}
