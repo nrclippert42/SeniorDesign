@@ -1,4 +1,5 @@
 omega = freq.*2.*pi;
+A = 2*pi*(25.4*(3/4)*(1/2))^2
 
 Zin = (z11_cells - z12_cells)-((z11_air - z12_air)+(z11_PBS-z12_PBS));
 Zp = (z12_cells - (z12_air + z12_PBS));
