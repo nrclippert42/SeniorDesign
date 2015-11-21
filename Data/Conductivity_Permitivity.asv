@@ -1,0 +1,51 @@
+omega = freq.*2.*pi;
+A = 2*pi*(0.001905/2)^2;
+
+Zin = (z11_cells - z12_cells)-(z11_PBS-z12_PBS);
+Zp = (z12_cells - z12_PBS);
+Zout = (z22_cells - z12_cells)-(z22_PBS - z12_PBS);
+Z_air_in = (z11_air - z12_air);
+Z_air_p = (z12_air);
+Z_air_out = (z22_air - Z12_air);
+
+dP_Zin = Calc_Permittivity(d,A,Zin,omega);
+dP_Zp = Calc_Permittivity(d,A,Zp,omega);
+dP_Zout = Calc_Permittivity(d,A,Zout,omega);
+
+c_Zin = Calc_Conductivity(d,A,Zin);
+c_Zp = Calc_Conductivity(d,A,Zp);
+c_Zout = Calc_Conductivity(d,A,Zout);
+
+figure
+subplot(3,1,1)
+loglog(freq,abs(dP_Zin),'-s');
+title('Dielectric Permittivity \epsilon_{in}');
+xlabel('Frequency(Hz)');
+ylabel('\epsilon');
+subplot(3,1,2)
+loglog(freq,abs(dP_Zp));
+title('Dielectric Permittivity \epsilon_{p}');
+xlabel('Frequency(Hz)');
+ylabel('\epsilon');
+subplot(3,1,3)
+loglog(freq,abs(dP_Zout));
+title('Dielectric Permittivity \epsilon_{out}');
+xlabel('Frequency(Hz)');
+ylabel('\epsilon');
+
+figure
+subplot(3,1,1)
+scatter(freq,c_Zin);
+title('Conductivity \sigma_{in}');
+xlabel('Frequency(Hz)');
+ylabel('\sigma');
+subplot(3,1,2)
+scatter(freq,c_Zp);
+title('Conductivity \sigma_{p}');
+xlabel('Frequency(Hz)');
+ylabel('\sigma');
+subplot(3,1,3)
+scatter(freq,c_Zout);
+title('Conductivity \sigma_{out}');
+xlabel('Frequency(Hz)');
+ylabel('\sigma');
