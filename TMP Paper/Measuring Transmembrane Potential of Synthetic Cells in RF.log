@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  21 NOV 2015 16:57
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  18 NOV 2015 17:46
+>>>>>>> parent of 7b5aba0... edited errors in the documents
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -397,7 +401,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip50
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 14.
+Package hyperref Info: Option `colorlinks' set `true' on input line 13.
 
 (./Measuring Transmembrane Potential of Synthetic Cells in RF.aux
 
@@ -409,20 +413,20 @@ LaTeX Warning: Label `test-fixture' multiply defined.
 )
 \openout1 = `"Measuring Transmembrane Potential of Synthetic Cells in RF.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 -- Lines per column: 58 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -454,7 +458,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring ON on input line 24.
+Package hyperref Info: Link coloring ON on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -464,9 +468,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count145
 )
-LaTeX Info: Redefining \ref on input line 24.
-LaTeX Info: Redefining \pageref on input line 24.
-LaTeX Info: Redefining \nameref on input line 24.
+LaTeX Info: Redefining \ref on input line 23.
+LaTeX Info: Redefining \pageref on input line 23.
+LaTeX Info: Redefining \nameref on input line 23.
 
 (./Measuring Transmembrane Potential of Synthetic Cells in RF.out)
 (./Measuring Transmembrane Potential of Synthetic Cells in RF.out)
@@ -474,7 +478,7 @@ LaTeX Info: Redefining \nameref on input line 24.
 \openout3 = `"Measuring Transmembrane Potential of Synthetic Cells in RF.out"'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
 
  []
 
@@ -482,128 +486,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--64
 
 
 ]
-<Pictures/two_port.png, id=143, 283.0575pt x 106.89937pt>
+<Pictures/two_port.png, id=135, 283.0575pt x 106.89937pt>
 File: Pictures/two_port.png Graphic file (type png)
 
 <use Pictures/two_port.png>
-Package pdftex.def Info: Pictures/two_port.png used on input line 87.
+Package pdftex.def Info: Pictures/two_port.png used on input line 86.
 (pdftex.def)             Requested size: 227.62204pt x 85.96652pt.
 
-<Pictures/Equivalent_Circuit.png, id=145, 230.64894pt x 105.32968pt>
+<Pictures/Equivalent_Circuit.png, id=137, 230.64894pt x 105.32968pt>
 File: Pictures/Equivalent_Circuit.png Graphic file (type png)
 
 <use Pictures/Equivalent_Circuit.png>
-Package pdftex.def Info: Pictures/Equivalent_Circuit.png used on input line 92.
+Package pdftex.def Info: Pictures/Equivalent_Circuit.png used on input line 91.
 
 (pdftex.def)             Requested size: 227.62204pt x 103.95044pt.
 
-<Pictures/Combined_Test_Fixture.png, id=147, 329.73187pt x 381.67593pt>
+<Pictures/Combined_Test_Fixture.png, id=139, 329.73187pt x 381.67593pt>
 File: Pictures/Combined_Test_Fixture.png Graphic file (type png)
 
 <use Pictures/Combined_Test_Fixture.png>
 Package pdftex.def Info: Pictures/Combined_Test_Fixture.png used on input line 
-112.
+111.
 (pdftex.def)             Requested size: 227.62204pt x 263.4848pt.
  [2 <./Pictures/two_port.png> <./Pictures/Equivalent_Circuit.png> <./Pictures/C
 ombined_Test_Fixture.png>]
-<Pictures/Beaker.png, id=159, 572.1375pt x 337.26pt>
+<Pictures/Beaker.png, id=151, 572.1375pt x 337.26pt>
 File: Pictures/Beaker.png Graphic file (type png)
  <use Pictures/Beaker.png>
-Package pdftex.def Info: Pictures/Beaker.png used on input line 142.
+Package pdftex.def Info: Pictures/Beaker.png used on input line 141.
 (pdftex.def)             Requested size: 227.62204pt x 134.176pt.
 
-[3 <./Pictures/Beaker.png>]
-Underfull \hbox (badness 6608) in paragraph at lines 221--222
-[]\OT1/ptm/m/n/10 Measure the S-Parameters with PBS (Phos-phate
- []
-
-<Pictures/hemocytometer.jpg, id=180, 2601.72pt x 1951.29pt>
+<Pictures/hemocytometer.jpg, id=152, 2601.72pt x 1951.29pt>
 File: Pictures/hemocytometer.jpg Graphic file (type jpg)
 
 <use Pictures/hemocytometer.jpg>
-Package pdftex.def Info: Pictures/hemocytometer.jpg used on input line 247.
+Package pdftex.def Info: Pictures/hemocytometer.jpg used on input line 151.
 (pdftex.def)             Requested size: 256.0748pt x 192.0439pt.
 
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 247--248
+Overfull \hbox (4.0748pt too wide) in paragraph at lines 151--152
 [][] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<Pictures/Epsilon_In.png, id=182, 502.12593pt x 376.40625pt>
-File: Pictures/Epsilon_In.png Graphic file (type png)
-
-<use Pictures/Epsilon_In.png>
-Package pdftex.def Info: Pictures/Epsilon_In.png used on input line 261.
-(pdftex.def)             Requested size: 256.0748pt x 191.97038pt.
-
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 261--262
-[][] 
- []
-
-<Pictures/Epsilon_P.png, id=183, 502.12593pt x 376.40625pt>
-File: Pictures/Epsilon_P.png Graphic file (type png)
-
-<use Pictures/Epsilon_P.png>
-Package pdftex.def Info: Pictures/Epsilon_P.png used on input line 266.
-(pdftex.def)             Requested size: 256.0748pt x 191.97038pt.
-
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 266--267
-[][] 
- []
-
-<Pictures/Epsilon_Out.png, id=184, 502.12593pt x 376.40625pt>
-File: Pictures/Epsilon_Out.png Graphic file (type png)
-
-<use Pictures/Epsilon_Out.png>
-Package pdftex.def Info: Pictures/Epsilon_Out.png used on input line 271.
-(pdftex.def)             Requested size: 256.0748pt x 191.97038pt.
-
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 271--272
-[][] 
- []
-
-[4 <./Pictures/hemocytometer.jpg> <./Pictures/Epsilon_In.png (PNG copy)>]
-<Pictures/Epsilon_Low_Freq.png, id=201, 502.12593pt x 376.40625pt>
-File: Pictures/Epsilon_Low_Freq.png Graphic file (type png)
-
-<use Pictures/Epsilon_Low_Freq.png>
-Package pdftex.def Info: Pictures/Epsilon_Low_Freq.png used on input line 278.
-(pdftex.def)             Requested size: 256.0748pt x 191.97038pt.
-
-Overfull \hbox (4.0748pt too wide) in paragraph at lines 278--279
-[][] 
- []
-
-
-Underfull \vbox (badness 2088) has occurred while \output is active []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 336.
- [5 <./Pictures/Epsilon_P.png (PNG copy)> <./Pictures/Epsilon_Out.png (PNG copy
-)> <./Pictures/Epsilon_Low_Freq.png (PNG copy)>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 336.
+[3 <./Pictures/Beaker.png> <./Pictures/hemocytometer.jpg>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 280.
+ [4]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 280.
 
 (./Measuring Transmembrane Potential of Synthetic Cells in RF.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 336.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 336.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 280.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 280.
 Package rerunfilecheck Info: File `"Measuring Transmembrane Potential of Synthe
 tic Cells in RF".out' has not changed.
-(rerunfilecheck)             Checksum: 3ACD542B9A6BA287B3723AC27DD11424;1687.
+(rerunfilecheck)             Checksum: 48737A7B968B86614C8B71896D2FAA31;1529.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 336.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 280.
  ) 
 Here is how much of TeX's memory you used:
- 7925 strings out of 495020
- 120844 string characters out of 6181324
- 219188 words of memory out of 5000000
- 10973 multiletter control sequences out of 15000+600000
+ 7891 strings out of 495020
+ 120056 string characters out of 6181324
+ 219943 words of memory out of 5000000
+ 10950 multiletter control sequences out of 15000+600000
  40192 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 37i,9n,39p,1284b,433s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,9n,39p,1285b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/
@@ -618,12 +566,12 @@ e/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb>
 Output written on "Measuring Transmembrane Potential of Synthetic Cells in RF.p
-df" (5 pages, 919521 bytes).
+df" (4 pages, 722470 bytes).
 PDF statistics:
- 269 PDF objects out of 1000 (max. 8388607)
- 233 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 262 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 246 PDF objects out of 1000 (max. 8388607)
+ 215 compressed objects within 3 object streams
+ 63 named destinations out of 1000 (max. 500000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  18 NOV 2015 17:46

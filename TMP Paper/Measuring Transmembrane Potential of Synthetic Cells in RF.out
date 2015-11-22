@@ -14,6 +14,7 @@
 \BOOKMARK [2][-]{subsection.7.6}{Cells}{section.7}% 13
 \BOOKMARK [2][-]{subsection.7.7}{Hewlett-Packard 8735E Network Analyzer 30kHz - 6GHz}{section.7}% 14
 \BOOKMARK [1][-]{section.8}{Methods}{}% 15
+<<<<<<< HEAD
 \BOOKMARK [2][-]{subsection.8.1}{Procedure for splitting cells for regrowth and testing}{section.8}% 16
 \BOOKMARK [2][-]{subsection.8.2}{Tools and Equipment}{section.8}% 17
 \BOOKMARK [2][-]{subsection.8.3}{Personal Safety Equipment}{section.8}% 18
@@ -53,3 +54,15 @@
 \BOOKMARK [1][-]{section.12}{Acknowledgement}{}% 24
 \BOOKMARK [1][-]{section*.1}{References}{}% 25
 >>>>>>> 52327035ade911616ac9466469c39f87a5ff8f86
+=======
+\BOOKMARK [2][-]{subsection.8.1}{Cell Concentration}{section.8}% 16
+\BOOKMARK [1][-]{section.9}{Procedure for splitting cells for regrowth and testing}{}% 17
+\BOOKMARK [2][-]{subsection.9.1}{Tools and Equipment}{section.9}% 18
+\BOOKMARK [2][-]{subsection.9.2}{Personal Safety Equipment}{section.9}% 19
+\BOOKMARK [2][-]{subsection.9.3}{Notes}{section.9}% 20
+\BOOKMARK [2][-]{subsection.9.4}{Procedure}{section.9}% 21
+\BOOKMARK [1][-]{section.10}{Experiment Procedure}{}% 22
+\BOOKMARK [1][-]{section.11}{Conclusion}{}% 23
+\BOOKMARK [1][-]{section.12}{Acknowledgement}{}% 24
+\BOOKMARK [1][-]{section*.1}{References}{}% 25
+>>>>>>> parent of 7b5aba0... edited errors in the documents
