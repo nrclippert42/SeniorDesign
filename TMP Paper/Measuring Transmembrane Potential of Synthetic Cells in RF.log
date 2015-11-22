@@ -1,6 +1,10 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  21 NOV 2015 16:57
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  18 NOV 2015 17:46
+>>>>>>> parent of 7b5aba0... edited errors in the documents
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  18 NOV 2015 17:46
 >>>>>>> parent of 7b5aba0... edited errors in the documents
@@ -573,6 +577,7 @@ PDF statistics:
  63 named destinations out of 1000 (max. 500000)
  226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
+<<<<<<< HEAD
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2015.9.29)  18 NOV 2015 17:46
 entering extended mode
@@ -1145,3 +1150,5 @@ PDF statistics:
  226 words of extra memory for PDF output out of 10000 (max. 10000000)
 
 >>>>>>> 52327035ade911616ac9466469c39f87a5ff8f86
+=======
+>>>>>>> parent of 7b5aba0... edited errors in the documents
