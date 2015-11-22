@@ -240,12 +240,53 @@ Add several milliliters of bleach to the disposable test tube. The liquid should
 \end{enumerate}
 
 \textbf{Count Cell concentration} \\
-The cell concentration will be measured using a hemocytometer. An example of the process of counting the cells can be seen in the next figure.
+The cell concentration will be measured using a hemocytometer. The equation for finding cell concentration can be found below. The tables below show how many cells were counted in each box.
+
+\begin{equation}
+\label{cell-concentration}
+Cell \: Concentration = \frac{Number \: of \: Cells}{Volume \: of \: Cells \: Counted}
+\end{equation}
+
+\textbf{Experiment Procedure (Network Analyzer)} \\
+\begin{table}[ht]
+\centering
+\caption{Cell Concentration}
+\label{table-1}
+\begin{tabular}{|l|l|l|l|}
+\hline
+10 & 9  & 11 & 11 \\ \hline
+6  & 11 & 6  & 18 \\ \hline
+11 & 10 & 12 & 8  \\ \hline
+4  & 8  & 7  & 6  \\ \hline
+\end{tabular}
+\end{table}
+
+$Cell \: Concentration = 1.48 \: cells/nL$
+
+\textbf{Experiment Procedure (Impedance Analyzer)} \\
+\begin{table}[ht]
+\centering
+\caption{Cell Concentration}
+\label{table-2}
+\begin{tabular}{|l|l|l|l|}
+\hline
+18 & 13 & 15 & 19 \\ \hline
+12 & 11 & 9  & 16 \\ \hline
+11 & 12 & 12 & 17 \\ \hline
+9  & 12 & 13 & 6  \\ \hline
+\end{tabular}
+\end{table}
+
+$Cell \: Concentration = 2.10 \: cells/nL$
+
+In the picture below an example of a hemocytometer can be observed. We used the largest sized divisions with an area of $0.0625 mm^2$, or $6.25nL$ and a total area of $1mm^2$ or $100nL$
 
 \begin{figure}[h]
 \label{hemocytometer}
 \includegraphics[width=9cm]{hemocytometer.jpg}
 \end{figure}
+
+\vfill
 
 \section{Data and Analysis}
 The first three plots show the relative dielectric permittivity of the device under test. The device has been modeled by a resistor network and each of the permittivities have been calculated in the following figures using equation \ref{permittivity}.
@@ -271,7 +312,7 @@ Z_{out} &= Z_{22} - Z_{12} \\
 \includegraphics[width = 9cm]{Epsilon_Out.png}
 \end{figure}
 
-As illusrated in the graphs below, the relative permittivity of the cells in all cases is similar to the relative permittivity of the PBS solution. This implies that only the permittivity of the PBS solution and test fixture is measured. The relative permittivity is noticeably high, where the mean of the three relative permittivities is $7.5538\times10^6$. To put this in perspective, air has a relative permittivity of 1.0006. When looking at the results from experiment two at low frequencies, we see how the cells suspended in the PBS solution have a high permittivity and drops down with frequency. This is a trend that has been seen in research before such as in reference \cite{Dielectric Spectroscopy}. This area is known as the $\alpha$-relaxation region. At high frequencies, noise is also noticeable. 
+As illusrated in the graphs, the relative permittivity of the cells in all cases is similar to the relative permittivity of the PBS solution. This implies that only the permittivity of the PBS solution and test fixture is measured. The relative permittivity is noticeably high, where the mean of the three relative permittivities is $7.5538\times10^6$. To put this in perspective, air has a relative permittivity of 1.0006. When looking at the results from experiment two at low frequencies, we see how the cells suspended in the PBS solution have a high permittivity and drops down with frequency. This is a trend that has been seen in research before such as in reference \cite{Dielectric Spectroscopy}. This area is known as the $\alpha$-relaxation region. At high frequencies, noise is also noticeable. 
 
 \begin{figure}[ht]
 \label{diectric_Permittivity_Low_Freq}
